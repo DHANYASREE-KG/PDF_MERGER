@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Merger</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div class="card">
+
+        <div class="header">
+            <h1>PDF Merger</h1>
+            <p>Merge multiple PDF files quickly and securely</p>
+        </div>
+
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+
+        <!-- IMPORTANT: action must point to merge -->
+        <form action="{% url 'merge' %}" 
+              method="post" 
+              enctype="multipart/form-data" 
+              id="mergeForm">
+            {% csrf_token %}
+
+            <!-- Hidden File Input -->
+            <input type="file" 
+                   id="fileInput" 
+                   name="files" 
+                   multiple 
+                   accept=".pdf" 
+                   hidden>
+
+            <!-- Add Button -->
+            <button type="button" class="add-btn">
+                + Add PDF Files
+            </button>
+
+            <!-- File List -->
+            <div class="file-container">
+                <ul id="fileList" class="file-list"></ul>
+            </div>
+
+            <!-- File Counter -->
+            <div class="file-info">
+                <span id="fileCount">0</span> files selected
+            </div>
+
+            <!-- Merge Button -->
+            <button type="submit" class="merge-btn">
+                Merge PDFs
+            </button>
+        </form>
+
+    </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+{% if success %}
+<div class="modal-overlay">
+    <div class="modal-box">
+        <button type="button" class="close-btn" onclick="closeModal()">×</button>
+
+        <h2 class="success-title">Success!</h2>
+        <p>Your PDFs have been merged successfully.</p>
+
+        <form action="{% url 'download' %}" method="get">
+            <label class="filename-label">
+                Enter a filename for your merged PDF:
+            </label>
+
+            <input type="text" 
+                   name="filename" 
+                   value="{{ default_name }}" 
+                   class="filename-input"
+                   required>
+
+            <button type="submit" class="download-btn">
+                ⬇ Download Merged PDF
+            </button>
+        </form>
+    </div>
+</div>
+{% endif %}
+
+<script src="{% static 'script.js' %}"></script>
+</body>
+</html>
