@@ -1,74 +1,136 @@
-# 📄 PDF Merger
+# 📄 PDF Merger Web Application
 
-A simple and clean web application to merge multiple PDF files into one, built with **Django**.
+A simple web application built using **Django** that allows users to upload multiple PDF files and merge them into a single PDF file.
 
-## Features
+This project demonstrates basic full-stack web development using Python and Django with PDF file handling.
+
+---
+
+## 🚀 Features
+
 - Upload multiple PDF files
-- Merge them into a single PDF instantly
-- Download the merged PDF with a custom filename
-- Clean, responsive UI
+- Merge PDFs into a single file
+- Remove selected files before merging
+- Download the merged PDF
+- Simple and user-friendly interface
 
-## Tech Stack
-- **Backend**: Django (Python)
-- **Frontend**: HTML, CSS, JavaScript (served via Django templates)
-- **PDF Processing**: pypdf
+---
 
-## Local Setup
+## 🛠️ Technologies Used
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/YOUR_USERNAME/pdf-merger.git
-cd pdf-merger
+- **Backend:** Python, Django
+- **Frontend:** HTML, CSS, JavaScript
+- **PDF Processing:** pypdf
+- **Version Control:** Git, GitHub
+
+---
+
+## 📂 Project Structure
+
+```
+pdf_merger_project/
+│
+├── manage.py
+├── pdf_merger/
+│
+├── merger/
+│   ├── views.py
+│   ├── urls.py
+│   └── models.py
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   ├── style.css
+│   └── script.js
+│
+└── images/
+    ├── home.png
+    └── success.png
 ```
 
-### 2. Create and activate a virtual environment
+---
+
+## 🖼️ Project Screenshots
+
+### Main Interface
+
+![Home Page](images/home.png)
+
+### PDF Merge Success
+
+![Success Page](images/success.png)
+
+---
+
+## ⚙️ How It Works
+
+1. User selects multiple PDF files.
+2. Files are uploaded to the Django backend.
+3. The **pypdf** library reads each PDF.
+4. All pages are merged into a single file.
+5. The merged PDF is generated and downloaded.
+
+---
+
+## 💻 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/DHANYASREE-KG/PDF_MERGER.git
+```
+
+Move into the project folder
+
+```bash
+cd PDF_MERGER
+```
+
+Create a virtual environment
+
 ```bash
 python -m venv venv
-# Windows:
+```
+
+Activate the environment (Windows)
+
+```bash
 venv\Scripts\activate
-# Mac/Linux:
-source venv/bin/activate
 ```
 
-### 3. Install dependencies
+Install dependencies
+
 ```bash
-pip install -r requirements.txt
+pip install django pypdf
 ```
 
-### 4. Run the development server
+Run the server
+
 ```bash
-python manage.py migrate
 python manage.py runserver
 ```
 
-Open your browser and go to: `http://127.0.0.1:8000`
+Open the project in browser
 
-## Deployment (Render)
-
-This app is deployed on [Render](https://render.com).
-
-### Steps to deploy:
-1. Push this repo to GitHub.
-2. Create a new **Web Service** on Render.
-3. Connect your GitHub repo.
-4. Set:
-   - **Build Command**: `chmod a+x build.sh && ./build.sh`
-   - **Start Command**: `gunicorn pdf_merger.wsgi:application`
-5. Add Environment Variables:
-   - `SECRET_KEY` = (a long random string)
-   - `RENDER` = `True`
-
-## Project Structure
 ```
-pdf_merger_project/
-├── merger/             # Django app (views, urls, models)
-├── pdf_merger/         # Project settings and wsgi
-├── templates/          # HTML templates
-├── static/             # CSS and JS files
-├── build.sh            # Render build script
-├── requirements.txt    # Python dependencies
-└── manage.py
+http://127.0.0.1:8000/
 ```
 
-## License
-MIT
+---
+
+## 📌 Future Improvements
+
+- Drag and drop file upload
+- PDF page reordering
+- Add PDF split feature
+- Deploy the application online
+
+---
+
+## 👩‍💻 Author
+
+**Dhanya Sree K G**
+
+GitHub: https://github.com/DHANYASREE-KG
