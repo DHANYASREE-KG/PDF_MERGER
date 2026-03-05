@@ -58,11 +58,11 @@ pdf_merger_project
 
 ![Home Page](images/home.png)
 
-### Merge Success Page
+---
+
+### Success Page
 
 ![Success Page](images/success.png)
-
----
 
 ## ⚙️ Installation
 
