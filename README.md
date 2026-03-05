@@ -1,15 +1,15 @@
 # 📄 PDF Merger Web Application
 
-A simple web application built using **Django** that allows users to upload multiple PDF files and merge them into a single PDF file.
+A simple web application built using **Django** that allows users to upload multiple PDF files and merge them into a single PDF document.
 
-This project demonstrates basic full-stack web development using Python and Django with PDF file handling.
+This project demonstrates basic **full-stack web development** with Python, Django, and PDF file handling.
 
 ---
 
 ## 🚀 Features
 
 - Upload multiple PDF files
-- Merge PDFs into a single file
+- Merge PDFs into a single document
 - Remove selected files before merging
 - Download the merged PDF
 - Simple and user-friendly interface
@@ -18,101 +18,91 @@ This project demonstrates basic full-stack web development using Python and Djan
 
 ## 🛠️ Technologies Used
 
-- **Backend:** Python, Django
-- **Frontend:** HTML, CSS, JavaScript
-- **PDF Processing:** pypdf
-- **Version Control:** Git, GitHub
+- **Backend:** Python, Django  
+- **Frontend:** HTML, CSS, JavaScript  
+- **PDF Library:** pypdf  
+- **Version Control:** Git, GitHub  
 
 ---
 
 ## 📂 Project Structure
 
 ```
-pdf_merger_project/
+pdf_merger_project
 │
 ├── manage.py
-├── pdf_merger/
+├── pdf_merger
 │
-├── merger/
+├── merger
 │   ├── views.py
 │   ├── urls.py
 │   └── models.py
 │
-├── templates/
+├── templates
 │   └── index.html
 │
-├── static/
+├── static
 │   ├── style.css
 │   └── script.js
 │
-└── images/
+└── images
     ├── home.png
     └── success.png
 ```
 
 ---
 
-## 🖼️ Project Screenshots
+## 🖼️ Screenshots
 
-### Main Interface
+### Home Page
 
 ![Home Page](images/home.png)
 
-### PDF Merge Success
+### Merge Success Page
 
 ![Success Page](images/success.png)
 
 ---
 
-## ⚙️ How It Works
+## ⚙️ Installation
 
-1. User selects multiple PDF files.
-2. Files are uploaded to the Django backend.
-3. The **pypdf** library reads each PDF.
-4. All pages are merged into a single file.
-5. The merged PDF is generated and downloaded.
-
----
-
-## 💻 Installation
-
-Clone the repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/DHANYASREE-KG/PDF_MERGER.git
 ```
 
-Move into the project folder
+### Navigate to the project directory
 
 ```bash
 cd PDF_MERGER
 ```
 
-Create a virtual environment
+### Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate the environment (Windows)
+### Activate the virtual environment (Windows)
 
 ```bash
 venv\Scripts\activate
 ```
 
-Install dependencies
+### Install dependencies
 
 ```bash
 pip install django pypdf
 ```
 
-Run the server
+### Run the development server
 
 ```bash
 python manage.py runserver
 ```
 
-Open the project in browser
+### Open in browser
 
 ```
 http://127.0.0.1:8000/
@@ -123,8 +113,8 @@ http://127.0.0.1:8000/
 ## 📌 Future Improvements
 
 - Drag and drop file upload
-- PDF page reordering
-- Add PDF split feature
+- Reorder PDF files before merging
+- Add PDF split functionality
 - Deploy the application online
 
 ---
@@ -133,4 +123,5 @@ http://127.0.0.1:8000/
 
 **Dhanya Sree K G**
 
-GitHub: https://github.com/DHANYASREE-KG
+- GitHub: https://github.com/DHANYASREE-KG
+- LinkedIn: https://linkedin.com/in/dhanya-sree-k-g
